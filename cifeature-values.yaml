@@ -49,7 +49,7 @@ api:
     NATIONAL_REGISTRY_B2C_ENDPOINT: 'https://skraidentitydev.b2clogin.com/skraidentitydev.onmicrosoft.com/b2c_1_midlun_flow/oauth2/v2.0/token'
     NATIONAL_REGISTRY_B2C_PATH: 'IS-DEV/GOV/10001/SKRA-Cloud-Protected/Midlun-v1'
     NATIONAL_REGISTRY_B2C_SCOPE: 'https://skraidentitydev.onmicrosoft.com/midlun/.default'
-    NODE_OPTIONS: '--max-old-space-size=2000'
+    NODE_OPTIONS: '--max-old-space-size=1843'
     NO_UPDATE_NOTIFIER: 'true'
     REGULATIONS_ADMIN_URL: 'http://web-regulations-admin-backend.regulations-admin.svc.cluster.local'
     SEND_FROM_EMAIL: 'development@island.is'
@@ -277,7 +277,7 @@ consultation-portal:
     ENVIRONMENT: 'dev'
     IDENTITY_SERVER_ISSUER_DOMAIN: 'identity-server.dev01.devland.is'
     NEXTAUTH_URL: 'https://beta.dev01.devland.is/samradsgatt/api/auth'
-    NODE_OPTIONS: '--max-old-space-size=464'
+    NODE_OPTIONS: '--max-old-space-size=460'
     SERVERSIDE_FEATURES_ON: ''
   grantNamespaces:
     - 'nginx-ingress-external'
@@ -360,7 +360,7 @@ web:
     DISABLE_ORGANIZATION_CHATBOT: 'false'
     DISABLE_SYSLUMENN_PAGE: 'false'
     ENVIRONMENT: 'dev'
-    NODE_OPTIONS: '--max-old-space-size=464'
+    NODE_OPTIONS: '--max-old-space-size=460'
     SERVERSIDE_FEATURES_ON: ''
     TRACKING_DOMAIN: 'beta.dev01.devland.is'
   grantNamespaces:
