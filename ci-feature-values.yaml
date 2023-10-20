@@ -149,11 +149,12 @@ api:
   image:
     name: 'api'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_e39508b_74465'
+    tag: 'ci-feature-values_06379cd_74744'
   ingress:
     primary-alb:
       annotations:
         kubernetes.io/ingress.class: 'nginx-external-alb'
+        nginx.ingress.kubernetes.io/service-upstream: 'true'
       hosts:
         - host: 'ci-feature-values-beta.dev01.devland.is'
           paths:
@@ -308,13 +309,14 @@ consultation-portal:
   image:
     name: 'consultation-portal'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_e39508b_74465'
+    tag: 'ci-feature-values_06379cd_74744'
   ingress:
     primary-alb:
       annotations:
         kubernetes.io/ingress.class: 'nginx-external-alb'
         nginx.ingress.kubernetes.io/proxy-buffer-size: '8k'
         nginx.ingress.kubernetes.io/proxy-buffering: 'on'
+        nginx.ingress.kubernetes.io/service-upstream: 'true'
       hosts:
         - host: 'ci-feature-values-beta.dev01.devland.is'
           paths:
@@ -392,13 +394,14 @@ web:
   image:
     name: 'web'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_e39508b_74465'
+    tag: 'ci-feature-values_06379cd_74744'
   ingress:
     primary-alb:
       annotations:
         kubernetes.io/ingress.class: 'nginx-external-alb'
         nginx.ingress.kubernetes.io/proxy-buffer-size: '8k'
         nginx.ingress.kubernetes.io/proxy-buffering: 'on'
+        nginx.ingress.kubernetes.io/service-upstream: 'true'
       hosts:
         - host: 'ci-feature-values-beta.dev01.devland.is'
           paths:
