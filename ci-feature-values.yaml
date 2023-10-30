@@ -149,7 +149,7 @@ api:
   image:
     name: 'api'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_06379cd_74744'
+    tag: 'ci-feature-values_aef86d4_75436'
   ingress:
     primary-alb:
       annotations:
@@ -309,7 +309,7 @@ consultation-portal:
   image:
     name: 'consultation-portal'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_06379cd_74744'
+    tag: 'ci-feature-values_aef86d4_75436'
   ingress:
     primary-alb:
       annotations:
@@ -394,7 +394,7 @@ web:
   image:
     name: 'web'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_06379cd_74744'
+    tag: 'ci-feature-values_aef86d4_75436'
   ingress:
     primary-alb:
       annotations:
