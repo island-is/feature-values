@@ -50,7 +50,6 @@ api:
     NATIONAL_REGISTRY_B2C_PATH: 'IS-DEV/GOV/10001/SKRA-Cloud-Protected/Midlun-v1'
     NATIONAL_REGISTRY_B2C_SCOPE: 'https://skraidentitydev.onmicrosoft.com/midlun/.default'
     NODE_OPTIONS: '--max-old-space-size=1843'
-    NO_UPDATE_NOTIFIER: 'true'
     REGULATIONS_ADMIN_URL: 'http://regulations-admin-backend.regulations-admin.svc.cluster.local'
     SEND_FROM_EMAIL: 'development@island.is'
     SERVERSIDE_FEATURES_ON: ''
@@ -149,7 +148,7 @@ api:
   image:
     name: 'api'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_2e99fc9_75936'
+    tag: 'ci-feature-values_5f58568_76313'
   ingress:
     primary-alb:
       annotations:
@@ -309,7 +308,7 @@ consultation-portal:
   image:
     name: 'consultation-portal'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_2e99fc9_75936'
+    tag: 'ci-feature-values_5f58568_76313'
   ingress:
     primary-alb:
       annotations:
@@ -346,12 +345,13 @@ global:
   env:
     AUDIT_GROUP_NAME: '/island-is/audit-log'
     AWS_REGION: 'eu-west-1'
-    NO_UPDATE_NOTIFIER: 'true'
+    NPM_CONFIG_UPDATE_NOTIFIER: 'false'
     PORT: '3333'
     name: 'dev'
   initContainer:
     env:
       AWS_REGION: 'eu-west-1'
+      NPM_CONFIG_UPDATE_NOTIFIER: 'false'
 namespaces:
   labels:
     namespaceType: 'feature'
@@ -394,7 +394,7 @@ web:
   image:
     name: 'web'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_2e99fc9_75936'
+    tag: 'ci-feature-values_5f58568_76313'
   ingress:
     primary-alb:
       annotations:
