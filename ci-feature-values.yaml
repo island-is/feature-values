@@ -69,6 +69,7 @@ api:
     XROAD_COURT_BANKRUPTCY_CERT_PATH: 'IS-DEV/GOV/10019/Domstolasyslan/JusticePortal-v1'
     XROAD_CRIMINAL_RECORD_PATH: 'r1/IS-DEV/GOV/10005/Logreglan-Protected/Sakavottord-PDF-v2'
     XROAD_DIGITAL_TACHOGRAPH_DRIVERS_CARD_PATH: 'IS-DEV/GOV/10017/Samgongustofa-Protected/Okuritar-V1'
+    XROAD_DIRECTORATE_OF_IMMIGRATION_PATH: 'IS-DEV/GOV/10011/UTL-Protected/Utl-Umsokn-v1'
     XROAD_DISABILITY_LICENSE_PATH: 'IS-DEV/GOV/10008/TR-Protected/oryrki-v1'
     XROAD_DISTRICT_COMMISSIONERS_PATH: 'IS-DEV/GOV/10016/Syslumenn-Protected/IslandMinarSidur'
     XROAD_DRIVING_LICENSE_BOOK_TIMEOUT: '20000'
@@ -148,7 +149,7 @@ api:
   image:
     name: 'api'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_0f7b212_76369'
+    tag: 'ci-feature-values_20a0993_76505'
   ingress:
     primary-alb:
       annotations:
@@ -308,7 +309,7 @@ consultation-portal:
   image:
     name: 'consultation-portal'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_0f7b212_76369'
+    tag: 'ci-feature-values_20a0993_76505'
   ingress:
     primary-alb:
       annotations:
@@ -394,7 +395,7 @@ web:
   image:
     name: 'web'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_0f7b212_76369'
+    tag: 'ci-feature-values_20a0993_76505'
   ingress:
     primary-alb:
       annotations:
