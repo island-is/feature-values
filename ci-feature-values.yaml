@@ -149,7 +149,7 @@ api:
   image:
     name: 'api'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_20a0993_76505'
+    tag: 'ci-feature-values_2f9208f_76623'
   ingress:
     primary-alb:
       annotations:
@@ -162,6 +162,7 @@ api:
         - host: 'ci-feature-values-api-catalogue.dev01.devland.is'
           paths:
             - '/api'
+  jobs: []
   namespace: 'feature-ci-feature-values'
   podSecurityContext:
     fsGroup: 65534
@@ -309,7 +310,7 @@ consultation-portal:
   image:
     name: 'consultation-portal'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_20a0993_76505'
+    tag: 'ci-feature-values_2f9208f_76623'
   ingress:
     primary-alb:
       annotations:
@@ -321,6 +322,7 @@ consultation-portal:
         - host: 'ci-feature-values-beta.dev01.devland.is'
           paths:
             - '/samradsgatt'
+  jobs: []
   namespace: 'feature-ci-feature-values'
   pvcs: []
   replicaCount:
@@ -395,7 +397,7 @@ web:
   image:
     name: 'web'
     repository: '821090935708.dkr.ecr.eu-west-1.amazonaws.com'
-    tag: 'ci-feature-values_20a0993_76505'
+    tag: 'ci-feature-values_2f9208f_76623'
   ingress:
     primary-alb:
       annotations:
@@ -407,6 +409,7 @@ web:
         - host: 'ci-feature-values-beta.dev01.devland.is'
           paths:
             - '/'
+  jobs: []
   namespace: 'feature-ci-feature-values'
   pvcs: []
   replicaCount:
