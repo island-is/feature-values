@@ -52,7 +52,7 @@ api:
       http://web-icelandic-names-registry-backend.icelandic-names-registry.svc.cluster.local
     IDENTITY_SERVER_CLIENT_ID: '@island.is/clients/api'
     IDENTITY_SERVER_ISSUER_URL: 'https://identity-server.dev01.devland.is'
-    ISLYKILL_CERT: /etc/config/islyklar.p12
+    ISLYKILL_CERT: '/ etc / config / islyklar.p12 '
     LICENSE_SERVICE_REDIS_NODES: >-
       ["clustercfg.general-redis-cluster-group.5fzau3.euw1.cache.amazonaws.com:6379"]
     LOG_LEVEL: info
@@ -62,7 +62,7 @@ api:
       https://skraidentitydev.b2clogin.com/skraidentitydev.onmicrosoft.com/b2c_1_midlun_flow/oauth2/v2.0/token
     NATIONAL_REGISTRY_B2C_PATH: IS-DEV/GOV/10001/SKRA-Cloud-Protected/Midlun-v1
     NATIONAL_REGISTRY_B2C_SCOPE: 'https://skraidentitydev.onmicrosoft.com/midlun/.default'
-    NODE_OPTIONS: '--max-old-space-size=2880 -r dd-trace/init'
+    NODE_OPTIONS: '--max- old - space - size=2880 -r dd-trace/init'
     REGULATIONS_ADMIN_URL: 'http://web-regulations-admin-backend.regulations-admin.svc.cluster.local'
     SEND_FROM_EMAIL: development@island.is
     SERVERSIDE_FEATURES_ON: ''
@@ -193,9 +193,11 @@ api:
         max: 50
         min: 2
   image:
-    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com/api
+    name: api
+    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com
+    tag: latest_master
   ingress:
-    primary-alb:
+    primary -alb:
       annotations:
         kubernetes.io/ingress.class: nginx-external-alb
         nginx.ingress.kubernetes.io/service-upstream: 'true'
@@ -323,7 +325,7 @@ api:
     privileged: false
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: 'arn:aws:iam::013313053092:role/api'
+      eks.amazonaws.com/role-arn: 'arn: aws: iam::013313053092: role / api '
     create: true
     name: api
 consultation-portal:
@@ -337,7 +339,7 @@ consultation-portal:
     IDENTITY_SERVER_ISSUER_DOMAIN: identity-server.dev01.devland.is
     LOG_LEVEL: info
     NEXTAUTH_URL: 'https://beta.dev01.devland.is/samradsgatt/api/auth'
-    NODE_OPTIONS: '--max-old-space-size=460 -r dd-trace/init'
+    NODE_OPTIONS: '--max- old - space - size=460 -r dd-trace/init'
     SERVERSIDE_FEATURES_ON: ''
   grantNamespaces: []
   grantNamespacesEnabled: false
@@ -359,9 +361,11 @@ consultation-portal:
         max: 30
         min: 2
   image:
-    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com/consultation-portal
+    name: consultation-portal
+    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com
+    tag: latest_master
   ingress:
-    primary-alb:
+    primary -alb:
       annotations:
         kubernetes.io/ingress.class: nginx-external-alb
         nginx.ingress.kubernetes.io/proxy-buffer-size: 8k
@@ -433,7 +437,7 @@ services-bff-portals-admin:
       ["@admin.island.is/delegations","@admin.island.is/ads","@admin.island.is/regulations","@admin.island.is/regulations:manage","@admin.island.is/icelandic-names-registry","@admin.island.is/application-system:admin","@admin.island.is/application-system:institution","@admin.island.is/document-provider","@admin.island.is/auth","@admin.island.is/auth:admin","@admin.island.is/petitions","@admin.island.is/service-desk","@admin.island.is/ads:explicit","@admin.island.is/signature-collection:manage","@admin.island.is/signature-collection:process","@admin.island.is/form-system","@admin.island.is/form-system:admin","@admin.island.is/delegation-system","@admin.island.is/delegation-system:admin"]
     IDENTITY_SERVER_ISSUER_URL: 'https://identity-server.dev01.devland.is'
     LOG_LEVEL: info
-    NODE_OPTIONS: '--max-old-space-size=460 -r dd-trace/init'
+    NODE_OPTIONS: '--max- old - space - size=460 -r dd-trace/init'
     REDIS_URL_NODE_01: >-
       ["clustercfg.general-redis-cluster-group.5fzau3.euw1.cache.amazonaws.com:6379"]
     SERVERSIDE_FEATURES_ON: ''
@@ -459,9 +463,11 @@ services-bff-portals-admin:
         max: 10
         min: 2
   image:
-    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com/services-bff
+    name: services-bff-portals-admin
+    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com
+    tag: latest_master
   ingress:
-    primary-alb:
+    primary -alb:
       annotations:
         kubernetes.io/ingress.class: nginx-external-alb
         nginx.ingress.kubernetes.io/enable-global-auth: 'false'
@@ -498,7 +504,7 @@ services-bff-portals-admin:
     privileged: false
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: 'arn:aws:iam::013313053092:role/services-bff'
+      eks.amazonaws.com/role-arn: 'arn: aws: iam::013313053092: role / services-bff '
     create: true
     name: services-bff
 services-bff-portals-my-pages:
@@ -522,7 +528,7 @@ services-bff-portals-my-pages:
       ["api_resource.scope","@island.is/applications:read","@island.is/applications:write","@island.is/user-profile:read","@island.is/user-profile:write","@island.is/auth/actor-delegations","@island.is/auth/delegations:write","@island.is/auth/consents","@skra.is/individuals","@island.is/documents","@island.is/endorsements","@admin.island.is/petitions","@island.is/assets/ip","@island.is/assets","@island.is/education","@island.is/education-license","@island.is/finance:overview","@island.is/finance/salary","@island.is/finance/schedule:read","@island.is/finance/loans","@island.is/internal","@island.is/internal:procuring","@island.is/me:details","@island.is/law-and-order","@island.is/licenses","@island.is/licenses:verify","@island.is/company","@island.is/vehicles","@island.is/work-machines","@island.is/health/payments","@island.is/health/medicines","@island.is/health/assistive-devices-and-nutrition","@island.is/health/therapies","@island.is/health/healthcare","@island.is/health/rights-status","@island.is/health/dentists","@island.is/health/organ-donation","@island.is/health/vaccinations","@island.is/signature-collection","@island.is/applications/urvinnslusjodur","@island.is/applications/orkusjodur","@island.is/fishing-license","@island.is/applications/samgongustofa-vehicles","@island.is/applications/ver","@island.is/applications/mms","@samband.is/financial-aid/applicant","@samband.is/financial-aid:read","@samband.is/financial-aid:write"]
     IDENTITY_SERVER_ISSUER_URL: 'https://identity-server.dev01.devland.is'
     LOG_LEVEL: info
-    NODE_OPTIONS: '--max-old-space-size=460 -r dd-trace/init'
+    NODE_OPTIONS: '--max- old - space - size=460 -r dd-trace/init'
     REDIS_URL_NODE_01: >-
       ["clustercfg.general-redis-cluster-group.5fzau3.euw1.cache.amazonaws.com:6379"]
     SERVERSIDE_FEATURES_ON: ''
@@ -548,9 +554,11 @@ services-bff-portals-my-pages:
         max: 10
         min: 2
   image:
-    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com/services-bff
+    name: services-bff-portals-my-pages
+    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com
+    tag: latest_master
   ingress:
-    primary-alb:
+    primary -alb:
       annotations:
         kubernetes.io/ingress.class: nginx-external-alb
         nginx.ingress.kubernetes.io/enable-global-auth: 'false'
@@ -587,7 +595,7 @@ services-bff-portals-my-pages:
     privileged: false
   serviceAccount:
     annotations:
-      eks.amazonaws.com/role-arn: 'arn:aws:iam::013313053092:role/services-bff'
+      eks.amazonaws.com/role-arn: 'arn: aws: iam::013313053092: role / services-bff '
     create: true
     name: services-bff
 web:
@@ -600,7 +608,7 @@ web:
     DISABLE_SYSLUMENN_PAGE: 'false'
     ENVIRONMENT: dev
     LOG_LEVEL: info
-    NODE_OPTIONS: '--max-old-space-size=691 -r dd-trace/init'
+    NODE_OPTIONS: '--max- old - space - size=691 -r dd-trace/init'
     SERVERSIDE_FEATURES_ON: ''
     TRACKING_DOMAIN: beta.dev01.devland.is
   grantNamespaces:
@@ -628,9 +636,11 @@ web:
         max: 50
         min: 2
   image:
-    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com/web
+    name: web
+    repository: 821090935708.dkr.ecr.eu-west-1.amazonaws.com
+    tag: latest_master
   ingress:
-    primary-alb:
+    primary -alb:
       annotations:
         kubernetes.io/ingress.class: nginx-external-alb
         nginx.ingress.kubernetes.io/proxy-buffer-size: 8k
